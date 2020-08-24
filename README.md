@@ -1,8 +1,6 @@
 # WildflowerEvents
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wildflower_events`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Wildflower Events, a gem that will help you search for events at the University of Texas Lady Bird Johnson Wildflower Center outside of Austin, Texas. Founded in 1982, the Wildflower Center is dedicated to the conservation of native plants. To this end, they provide many opportunities for nature appreciation, plant conservation and ecological research and design.
 
 ## Installation
 
@@ -32,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/wildflower_events. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/wildflower_events/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/lauren-kohn/wildflower_events. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/wildflower_events/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
