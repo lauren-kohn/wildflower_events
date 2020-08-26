@@ -6,9 +6,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["lauren-kohn"]
   spec.email         = ["lauren.kohn@soft-adv.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Search events at the University of Texas Lady Bird Johnson Wildflower Center.}
+  spec.description   = %q{Welcome to Wildflower Events, a gem that will help you search for events at the University of Texas Lady Bird Johnson Wildflower Center outside of Austin, Texas. Founded in 1982, the Wildflower Center is dedicated to the conservation of native plants. To this end, they provide many opportunities for nature appreciation, plant conservation and ecological research and design.}
+  spec.homepage      = "http://no.website.yet"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
