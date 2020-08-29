@@ -2,4 +2,4 @@
 
 require_relative "../lib/wildflower_events"
 
-WildflowerEvents::CLI.new.greeting
+WildflowerEvents::CLI.new.call
