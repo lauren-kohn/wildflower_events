@@ -20,8 +20,9 @@ class WildflowerEvents::CLI
 		# info from scraper
 		@events = ["yoga", "gardening", "walk with naturalist"]
 		puts "Please select a number from the list."
-		@events.each_with_index do |event, index|
-			puts "#{index + 1}. #{event}"
+		@events.each.with_index(1) do |event, index|
+			# refactored from #each_with_index to allow for argument that will adjust array element number to desired index output
+			puts "#{index}. #{event}"
 		end
 	end 
 	
