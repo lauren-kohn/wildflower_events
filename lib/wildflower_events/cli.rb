@@ -1,18 +1,18 @@
 class WildflowerEvents::CLI
 
 	def call
-		puts "Welcome to the Wildflower Events app! Please enter a search term to find events."
+		puts "\nWelcome to the Wildflower Events app! Please enter a search term to find events.\n"
 		puts "Consider an upcoming month name or a type of activity, such as yoga or gardening."
-		get_user_input
+		get_user_search_term
 		# get_events(input) (scraper class)
 		list_events 
 		select_from_list
 		# get_event_detail (scraper class)
-		# present_details
+		# present_details_for(event) - included in selected_from_list
 	end
 	
-	def get_user_input 
-	  @user_search = gets.strip
+	def get_user_search_term 
+	  @search_term = gets.strip
 		# this info will be used for the scraper
 	end
 	
@@ -27,10 +27,15 @@ class WildflowerEvents::CLI
 	end 
 	
 	def select_from_list
-		@selected_event = gets.strip
+		selected_event = gets.strip.to_i
+		# present_details_for(selected_event) if valid(selected_event)
 	end
 	
-	def present_details 
+	def valid(input)
+		input <= @events.length && input > 0
+	end
+	
+	def present_details_for(event) 
 		# puts event_name
 		# puts event_details
 	end
