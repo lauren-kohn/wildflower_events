@@ -28,7 +28,7 @@ class WildflowerEvents::CLI
 	
 	def select_from_list
 		selected_event = gets.strip.to_i
-		# present_details_for(selected_event) if valid(selected_event)
+		present_details_for(selected_event) if valid(selected_event)
 	end
 	
 	def valid(input)
@@ -36,8 +36,10 @@ class WildflowerEvents::CLI
 	end
 	
 	def present_details_for(event) 
-		# puts event_name
-		# puts event_details
+		puts "\nHere are the details for your event.\n"
+		puts "event_name"
+		puts "event_details"
+		puts "\nEnjoy!\n"
 	end
 		# add options to repeat or exit
 
