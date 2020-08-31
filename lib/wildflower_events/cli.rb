@@ -27,12 +27,20 @@ class WildflowerEvents::CLI
 	end 
 	
 	def select_from_list
-		selected_event = gets.strip.to_i
-		present_details_for(selected_event) if valid(selected_event)
+		selected_event = gets.strip
+		if valid(selected_event)
+			present_details_for(selected_event)
+		elsif selected_event == "exit"
+			# exit
+		else !valid(selected_event)
+			puts "We couldn't find that option. Please enter your selection again."
+			list_events
+			select_from_list
+		end
 	end
 	
 	def valid(input)
-		input <= @events.length && input > 0
+		input.to_i <= @events.length && input.to_i > 0
 	end
 	
 	def present_details_for(event) 
