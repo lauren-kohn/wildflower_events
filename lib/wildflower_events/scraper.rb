@@ -1,0 +1,3 @@
+class WildflowerEvents::Scraper 
+
+end
