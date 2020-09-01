@@ -18,7 +18,7 @@ class WildflowerEvents::CLI
 	
 	def list_events
 		# info from scraper
-		@events = ["yoga", "gardening", "walk with naturalist"]
+		@events = WildflowerEvents::Event.all
 		puts "Please select a number from the list."
 		@events.each.with_index(1) do |event, index|
 			# refactored from #each_with_index to allow for argument that will adjust array element number to desired index output
@@ -44,10 +44,11 @@ class WildflowerEvents::CLI
 	end
 	
 	def present_details_for(event) 
-		puts "\nHere are the details for your event.\n"
-		puts "event_name"
-		puts "event_details"
-		puts "\nEnjoy!\n"
+		# gets details for selected event
+		puts "\nHere are the details for your #{@events[event.to_i - 1]}."
+		puts "\nevent_name"
+		puts "\nevent_details"
+		puts "\nEnjoy!"
 	end
 		# add options to repeat or exit
 
