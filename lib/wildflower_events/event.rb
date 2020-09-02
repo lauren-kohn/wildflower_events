@@ -3,7 +3,7 @@ class WildflowerEvents::Event
 	attr_accessor :name
 	attr_reader :date, :cost
 
-	@@all = ["yoga", "gardening", "walk with naturalist"]
+	@@all = []
 	
 	def initialize(name, date, cost)
 		@name = name

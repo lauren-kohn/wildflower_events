@@ -18,7 +18,7 @@ class WildflowerEvents::Scraper
 			date = event.css(".tribe-event-date-start").text
 			cost = event.css(".ticket-cost").text.strip
 			puts name, date, cost, ""
-			WildflowerEvents::Event.new(name, date, cost)
+			#WildflowerEvents::Event.new(name, date, cost)
 		end
 	end
 

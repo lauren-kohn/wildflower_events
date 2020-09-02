@@ -17,10 +17,11 @@ class WildflowerEvents::CLI
 	end
 	
 	def get_events#(input)
-		WildflowerEvents::Event.new("yoga")
-		WildflowerEvents::Event.new("gardening")
-		WildflowerEvents::Event.new("walk with naturalist")
+		#WildflowerEvents::Event.new("yoga")
+		#WildflowerEvents::Event.new("gardening")
+		#WildflowerEvents::Event.new("walk with naturalist")
 		@events = WildflowerEvents::Event.all
+		binding.pry
 	end 
 	
 	def list_events
