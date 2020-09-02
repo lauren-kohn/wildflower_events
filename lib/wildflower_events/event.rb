@@ -9,6 +9,7 @@ class WildflowerEvents::Event
 	end
 	
 	def self.all
+		WildflowerEvents::Scraper.scrape_events if @@all.empty? 
 		@@all
 	end
 
