@@ -1,17 +1,24 @@
 class WildflowerEvents::Scraper 
 
 	def self.scrape_events
+		# take search term from user
+		# append search term to website link (interpolated text)
+		# do the scrape
+		# iterate over scraped data and create events with attributes like event.name, event.date, event.cost
+		
+	
 		site = "https://www.wildflower.org/events/list?tribe_paged=1&tribe_event_display=list&tribe-bar-date=2020-08-23&tribe-bar-search=september"
 		# check the website to see if you can edit it down to reflect how it is before the search is conducted
 		doc = Nokogiri::HTML(open(site))
 		
-		things = doc.css("div.tribe-events-loop div.type-tribe_events")
+		events = doc.css("div.tribe-events-loop div.type-tribe_events")
 		
-		things.each do |thing|
-			detail_one = thing.css("h3 a").text
-			detail_two = thing.css(".tribe-event-date-start").text
-			detail_three = thing.css(".ticket-cost").text.strip
-			puts detail_one, detail_two, detail_three, ""
+		events.each do |event|
+			name = event.css("h3 a").text
+			date = event.css(".tribe-event-date-start").text
+			cost = event.css(".ticket-cost").text.strip
+			puts name, date, cost, ""
+			WildflowerEvents::Event.new(name, date, cost)
 		end
 	end
 
