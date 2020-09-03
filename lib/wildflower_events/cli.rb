@@ -3,7 +3,7 @@ class WildflowerEvents::CLI
 	def call
 		puts "\nWelcome to the Wildflower Events app! Please enter a search term to find events.\n"
 		puts "Consider an upcoming month name or a type of activity, such as yoga or gardening."
-		get_user_search_term
+		get_search_term
 		get_events#(input) (scraper class)
 		list_events 
 		select_from_list
@@ -11,8 +11,9 @@ class WildflowerEvents::CLI
 		# present_details_for(event) - included in selected_from_list
 	end
 	
-	def get_user_search_term 
-	  @search_term = gets.strip
+	def get_search_term 
+	    search_term = gets.strip
+		WildflowerEvents::Scraper.scrape_events(search_term)
 		# this info will be used for the scraper
 	end
 	
@@ -21,7 +22,6 @@ class WildflowerEvents::CLI
 	end 
 	
 	def list_events
-		#@events = WildflowerEvents::Event.all
 		puts "Please select a number from the list."
 		@events.each.with_index(1) do |event, index|
 			# refactored from #each_with_index to allow for argument that will adjust array element number to desired index output
