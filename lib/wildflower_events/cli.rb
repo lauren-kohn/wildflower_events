@@ -21,11 +21,12 @@ class WildflowerEvents::CLI
 		#WildflowerEvents::Event.new("gardening")
 		#WildflowerEvents::Event.new("walk with naturalist")
 		@events = WildflowerEvents::Event.all
-		binding.pry
+		#binding.pry
 	end 
 	
 	def list_events
-		# info from scraper
+		@events = WildflowerEvents::Event.all
+		binding.pry
 		puts "Please select a number from the list."
 		@events.each.with_index(1) do |event, index|
 			# refactored from #each_with_index to allow for argument that will adjust array element number to desired index output
