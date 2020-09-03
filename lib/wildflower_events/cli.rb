@@ -17,20 +17,15 @@ class WildflowerEvents::CLI
 	end
 	
 	def get_events#(input)
-		#WildflowerEvents::Event.new("yoga")
-		#WildflowerEvents::Event.new("gardening")
-		#WildflowerEvents::Event.new("walk with naturalist")
 		@events = WildflowerEvents::Event.all
-		#binding.pry
 	end 
 	
 	def list_events
-		@events = WildflowerEvents::Event.all
-		binding.pry
+		#@events = WildflowerEvents::Event.all
 		puts "Please select a number from the list."
 		@events.each.with_index(1) do |event, index|
 			# refactored from #each_with_index to allow for argument that will adjust array element number to desired index output
-			puts "#{index}. #{event}"
+			puts "#{index}. #{event.name}"
 		end
 	end 
 	
@@ -53,9 +48,9 @@ class WildflowerEvents::CLI
 	
 	def present_details_for(event) 
 		# gets details for selected event
-		puts "\nHere are the details for your #{@events[event.to_i - 1]}."
-		puts "\nevent_name"
-		puts "\nevent_details"
+		puts "\nHere are the details for your #{@events[event.to_i - 1].name}."
+		puts "\n#{@events[event.to_i - 1].date}"
+		puts "\n#{@events[event.to_i - 1].cost}"
 		puts "\nEnjoy!"
 	end
 		# add options to repeat or exit
