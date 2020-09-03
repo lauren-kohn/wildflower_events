@@ -6,7 +6,6 @@ class WildflowerEvents::Scraper
 		# do the scrape
 		# iterate over scraped data and create events with attributes like event.name, event.date, event.cost
 		
-		binding.pry
 		site = "https://www.wildflower.org/events/list?tribe_paged=1&tribe_event_display=lis&tribe-bar-search=#{input}"
 		# check the website to see if you can edit it down to reflect how it is before the search is conducted
 		doc = Nokogiri::HTML(open(site))
