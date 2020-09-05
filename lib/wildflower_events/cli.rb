@@ -7,6 +7,14 @@ class WildflowerEvents::CLI
 		get_events
 		list_events 
 		select_from_list
+		puts "Would you like to search again? y/n"
+		repeat = gets.strip
+		if repeat == "y"
+			WildflowerEvents::Event.all.clear
+			call
+		else 
+			exit
+		end		
 	end
 	
 	def get_search_term 
@@ -34,7 +42,7 @@ class WildflowerEvents::CLI
 		if valid(selected_event)
 			present_details_for(selected_event)
 		elsif selected_event == "exit"
-			# exit
+			exit
 		else !valid(selected_event)
 			puts "We couldn't find that option. Please enter your selection again."
 			list_events
@@ -53,6 +61,5 @@ class WildflowerEvents::CLI
 		puts "\n#{@events[event.to_i - 1].cost}"
 		puts "\nEnjoy!"
 	end
-		# add options to repeat or exit
 
 end
