@@ -7,7 +7,7 @@ class WildflowerEvents::CLI
 		get_events
 		list_events 
 		select_from_list
-		puts "Would you like to search again? y/n"
+		puts "\nWould you like to search again? y/n"
 		repeat = gets.strip
 		if repeat == "y"
 			WildflowerEvents::Event.all.clear
@@ -58,7 +58,7 @@ class WildflowerEvents::CLI
 		# gets details for selected event
 		puts "\nHere are the details for your #{@events[event.to_i - 1].name}."
 		puts "\n#{@events[event.to_i - 1].date}"
-		puts "\n#{@events[event.to_i - 1].cost}"
+		puts "#{@events[event.to_i - 1].cost}"
 		puts "\nEnjoy!"
 	end
 
