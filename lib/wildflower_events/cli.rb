@@ -4,20 +4,24 @@ class WildflowerEvents::CLI
 		puts "\nWelcome to the Wildflower Events app! Please enter a search term to find events.\n"
 		puts "Consider an upcoming month name or a type of activity, such as yoga or gardening."
 		get_search_term
-		get_events#(input) (scraper class)
+		get_events
 		list_events 
 		select_from_list
-		# get_event_detail (scraper class)
-		# present_details_for(event) - included in selected_from_list
 	end
 	
 	def get_search_term 
-	    search_term = gets.strip
-		WildflowerEvents::Scraper.scrape_events(search_term)
-		# this info will be used for the scraper
+		@search_term = gets.strip
+	    #until WildflowerEvents::Event.all.length >= 1
+		#	WildflowerEvents::Scraper.scrape_events(search_term)
+		#	search_term = gets.strip
+		#end
 	end
 	
-	def get_events#(input)
+	def get_events
+		until WildflowerEvents::Event.all.length >= 1
+			WildflowerEvents::Scraper.scrape_events(@search_term)
+			get_search_term
+		end
 		@events = WildflowerEvents::Event.all
 	end 
 	
