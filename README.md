@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run the program, enter ./bin/find_events. When prompted, type a desired search term and press enter. If there are no results, users can enter a different search term. The program will then present a list of events presented by the www.Wildflower.org website. Select one from the list by entering a number; this will present the date and cost of the activity. The search can then be repeated as desired by following the prompts.
 
 ## Development
 
