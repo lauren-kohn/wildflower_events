@@ -11,16 +11,12 @@ class WildflowerEvents::CLI
 	
 	def get_search_term 
 		@search_term = gets.strip
-	    #until WildflowerEvents::Event.all.length >= 1
-		#	WildflowerEvents::Scraper.scrape_events(search_term)
-		#	search_term = gets.strip
-		#end
 	end
 	
 	def get_events
-		until WildflowerEvents::Event.all.length >= 1
+		while WildflowerEvents::Event.all.length < 1
 			WildflowerEvents::Scraper.scrape_events(@search_term)
-			get_search_term
+			get_search_term unless WildflowerEvents::Event.all.length > 0
 		end
 		@events = WildflowerEvents::Event.all
 	end 
