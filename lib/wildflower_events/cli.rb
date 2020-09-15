@@ -31,7 +31,8 @@ class WildflowerEvents::CLI
 	
 	def list_events
 		puts "Please select a number from the list."
-		@events.each.with_index(1) do |event, index|
+		@sorted_events = @events.sort_by { |event| event.name }
+		@sorted_events.each.with_index(1) do |event, index|
 			# refactored from #each_with_index to allow for argument that will adjust array element number to desired index output
 			puts "#{index}. #{event.name}"
 		end
